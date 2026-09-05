@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Insights & Content Report | Wayfair Area Rug</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f8f9fa; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+    
+    /* Header */
+    .header { background: linear-gradient(135deg, #7B2D8E 0%, #5E1A6E 100%); color: white; padding: 40px; border-radius: 12px; margin-bottom: 30px; }
+    .header h1 { font-size: 2.2em; margin-bottom: 10px; }
+    .header .subtitle { font-size: 1.2em; opacity: 0.9; }
+    .header .meta { margin-top: 20px; display: flex; gap: 15px; flex-wrap: wrap; }
+    .header .meta-item { background: rgba(255,255,255,0.15); padding: 8px 16px; border-radius: 20px; font-size: 0.9em; }
+    
+    /* Sections */
+    .section { background: white; border-radius: 12px; padding: 30px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .section h2 { color: #7B2D8E; font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f0e6f4; }
+    
+    /* Key Insights & Gen Layouts */
+    .exec-summary { background: linear-gradient(135deg, #f8f4fa 0%, #fff 100%); border-left: 4px solid #7B2D8E; }
+    .exec-summary p { font-size: 1.05em; margin-bottom: 15px; white-space: pre-line; }
+    .key-insights { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 20px; }
+    .insight-card { background: white; border: 1px solid #e0d4e6; border-radius: 8px; padding: 20px; text-align: center; }
+    .insight-card .number { font-size: 2.2em; font-weight: bold; color: #7B2D8E; }
+    .insight-card .label { font-size: 0.85em; color: #666; margin-top: 5px; }
+    .data-sources { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .data-source-card { background: #f8f9fa; border-radius: 8px; padding: 20px; }
+    .data-source-card h4 { color: #7B2D8E; margin-bottom: 12px; }
+    
+    /* Content Cards */
+    .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+    .content-card { border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden; }
+    .content-card-header { background: linear-gradient(135deg, #7B2D8E 0%, #9B4DB8 100%); color: white; padding: 15px 20px; }
+    .content-card-header .type { font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; }
+    .content-card-body { padding: 20px; }
+    .data-tag { display: inline-block; background: #f0e6f4; color: #7B2D8E; padding: 6px 12px; border-radius: 15px; font-size: 0.85em; margin-bottom: 10px; }
+    .keywords { margin-top: 10px; }
+    .keyword { display: inline-block; background: #e9ecef; color: #666; padding: 4px 10px; border-radius: 12px; font-size: 0.8em; margin: 3px 3px 3px 0; }
+    
+    /* Social Posts */
+    .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+    .social-post, .video-card, .ad-card { background: #f8f9fa; border-radius: 8px; padding: 15px; border: 1px solid #e9ecef; }
+    .platform-badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.75em; font-weight: 600; color: white; margin-bottom: 10px; }
+    .platform-badge.ig { background: linear-gradient(45deg, #f09433, #dc2743); }
+    .platform-badge.pin { background: #E60023; }
+    .platform-badge.fb { background: #1877F2; }
+    .platform-badge.tt { background: #000; }
+    
+    /* NEW: Video Scripts, Ad Copy & Product Copy */
+    .video-card h4, .product-card h4, .sequence-card h4 { color: #5E1A6E; margin-bottom: 10px; }
+    .script-section, .ad-element, .desc-box { margin-bottom: 10px; font-size: 0.95em; }
+    .script-section.hook { background: #fff3cd; padding: 8px; border-radius: 4px; border-left: 3px solid #ffc107; }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+    .product-card { background: white; border: 1px solid #e0d4e6; padding: 20px; border-radius: 8px; }
+    .desc-box { background: #f8f9fa; padding: 12px; border-radius: 6px; margin-bottom: 10px; }
+    
+    /* NEW: Sequences */
+    .sequence-card { background: white; border: 1px solid #e0d4e6; border-radius: 10px; padding: 25px; margin-bottom: 20px; }
+    .sequence-emails { display: grid; gap: 15px; margin-top: 20px; }
+    .sequence-email-step { background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #7B2D8E; }
+    .step-badge { display: inline-block; background: #5E1A6E; color: white; padding: 4px 10px; border-radius: 12px; font-size: 0.75em; margin-bottom: 10px; font-weight: bold; }
+    .sequence-email-step h5 { margin-bottom: 8px; font-size: 1.05em; }
+    .sequence-email-step p { color: #555; font-size: 0.95em; }
+
+    /* Campaigns & Angles */
+    .campaign-card { background: linear-gradient(135deg, #f8f4fa 0%, #fff 100%); border: 1px solid #e0d4e6; border-radius: 10px; padding: 25px; margin-bottom: 20px; }
+    .campaign-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
+    .campaign-detail { background: white; padding: 15px; border-radius: 8px; }
+    
+    .competitive-angle { background: #f8f9fa; border-left: 4px solid #7B2D8E; padding: 20px; margin-bottom: 15px; border-radius: 0 8px 8px 0; }
+    
+    /* Footer */
+    .footer { background: #5E1A6E; color: white; padding: 30px; border-radius: 12px; text-align: center; margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>AI Insights & Content Report</h1>
+      <p class="subtitle">Wayfair Area Rug - Natural &amp; Sustainable</p>
+      <div class="meta">
+        <span class="meta-item">📅 September 3, 2026</span>
+        <span class="meta-item">💡 Comprehensive Content Matrix Generated</span>
+      </div>
+    </header>
+    
+    <section class="section exec-summary">
+      <h2>📋 Executive Summary</h2>
+      <p>People are really leaning into rugs they can actually live on. We saw a 28% jump in people looking for rugs that can go right in the wash. It makes sense. You want your home to look great, but you don't want to panic if the dog runs inside with muddy feet. Most people are looking to spend around $150 to $400 to get that perfect balance of soft and tough.
+
+We have a huge chance to be the brand that gets it. Our friends are tired of 'museum homes' where you can't touch anything. We’re going to focus on the fact that you can have a beautiful, stylish rug that also handles real life. No more stress over spilled wine or messy art projects. Just great rugs for great homes.</p>
+      <div class="key-insights">
+  <div class="insight-card">
+    <div class="number">28%</div>
+    <div class="label">YoY Growth in Washable Rugs</div>
+  </div>
+
+  <div class="insight-card">
+    <div class="number">$150-$400</div>
+    <div class="label">Core Price Sweet Spot</div>
+  </div>
+
+  <div class="insight-card">
+    <div class="number">45%</div>
+    <div class="label">Buyers with Pets or Kids</div>
+  </div>
+</div>
+    </section>
+    
+    <section class="section">
+      <h2>📊 Data Foundation</h2>
+      <div class="data-sources">
+        <div class="data-source-card">
+          <h4>📈 From Market Analysis (P2)</h4>
+          <ul><li>Washable rugs are seeing a 28% jump in demand because people want easy cleaning.</li><li>Most shoppers are looking to spend between $150 and $400 for a living room size.</li><li>Durability is the number one thing people ask about before buying.</li></ul>
+        </div>
+        <div class="data-source-card">
+          <h4>🔍 From Competitor Analysis (P3)</h4>
+          <ul><li>Competitors are focusing on high-end luxury or super cheap disposables.</li><li>There is a massive gap for rugs that look expensive but can survive a juice spill.</li><li>45% of the market feels ignored by fancy brands that don't account for muddy paws.</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: Video Scripts -->
+    
+    <section class="section">
+      <h2>🎬 Video Scripts (Short-Form)</h2>
+      <p>Performance-optimized scripts designed for high retention in the first 3 seconds.</p>
+      <div class="social-grid">
+  <div class="video-card">
+    <div class="platform-badge tt">TikTok/Reels</div>
+    <h4>The Wash Test</h4>
+    <div class="script-section hook"><strong>Hook (0-3s):</strong> Stop buying rugs you're afraid to walk on.</div>
+    <div class="script-section body"><strong>Main Message:</strong> Show a close-up of a high-end looking rug. Pour something colorful on it. Throw it in the wash. Show it back on the floor, perfectly clean.</div>
+    <div class="script-section cta"><strong>CTA:</strong> Shop the washable collection at the link in our bio.</div>
+  </div>
+</div>
+    </section>
+
+    <!-- NEW: Email Sequences -->
+    
+    <section class="section">
+      <h2>📬 Lifecycle Email Sequences</h2>
+      <p>Automated, multi-step email flows designed to educate and convert.</p>
+      
+  <div class="sequence-card">
+    <h4>Welcome Series: Rugs for Real Life</h4>
+    <div class="data-tag">Goal: Help people find the right rug for their lifestyle and budget.</div>
+    <div class="sequence-emails">
+      
+        <div class="sequence-email-step">
+          <div class="step-badge">Email 1</div>
+          <h5>Subject: That rug your friend has? We found it.</h5>
+          <p>You know the one. It looks like a million bucks but handles your coffee spills like a pro. We think everyone deserves a home they love without the stress. Here are our favorite washable finds under $400.</p>
+        </div>
+      
+        <div class="sequence-email-step">
+          <div class="step-badge">Email 2</div>
+          <h5>Subject: Pet hair? What pet hair?</h5>
+          <p>If your home is 45% pet hair (we get it!), you need a rug that can keep up. These picks are easy to vacuum and even easier to wash. Your vacuum will thank you.</p>
+        </div>
+      
+        <div class="sequence-email-step">
+          <div class="step-badge">Email 3</div>
+          <h5>Subject: The 'Oops' proof living room</h5>
+          <p>Life is messy. Your rug shouldn't make it harder. Check out these top-rated styles that stay soft even after a dozen washes.</p>
+        </div>
+      
+    </div>
+  </div>
+
+    </section>
+
+    <!-- NEW: Product Descriptions -->
+    
+    <section class="section">
+      <h2>✍️ Product Copy</h2>
+      <p>SEO-optimized product descriptions tailored for Wayfair's catalog pages.</p>
+      <div class="product-grid">
+  <div class="product-card">
+    <h4>Washable Area Rug</h4>
+    <div class="desc-box"><strong>Short Form:</strong> Soft enough for movie nights, durable enough for daily life.</div>
+    <div class="desc-box"><strong>Long Form:</strong> This rug is ready for whatever your day throws at it. It has that high-end look you want, but you can toss it in the wash whenever it needs a refresh. It's perfect for high-traffic spots like the living room or entryway. Plus, it feels great under your feet.</div>
+    <div class="keywords"><span class="keyword">machine washable rug</span><span class="keyword">stain resistant area rug</span></div>
+  </div>
+</div>
+    </section>
+
+    <!-- NEW: Ad Copy -->
+    
+    <section class="section">
+      <h2>📣 Paid Ad Copy Variations</h2>
+      <p>Direct response copy structured for paid acquisition channels.</p>
+      <div class="social-grid">
+  <div class="ad-card">
+    <div class="platform-badge fb">Facebook</div>
+    <div class="ad-element"><strong>Headline:</strong> Rugs that love your pets as much as you do.</div>
+    <div class="ad-element"><strong>Primary Text:</strong> We found the rug that handles the mud, the hair, and the spills. Shop our washable collection starting at $150.</div>
+    <div class="ad-element"><strong>CTA:</strong> Shop Now</div>
+  </div>
+</div>
+    </section>
+    
+    <section class="section">
+      <h2>💡 Content Ideas</h2>
+      <p>Strategic content recommendations, each tied to specific data insights from your reports:</p>
+      <div class="content-grid">
+  <div class="content-card">
+    <div class="content-card-header">
+      <div class="type">Blog Post</div>
+      <h4>The 'Oops' Proof Rug Guide</h4>
+    </div>
+    <div class="content-card-body">
+      <p>A breakdown of which rug materials actually survive a busy house and how to pick one that feels good on your feet.</p>
+      <div class="data-tag">📊 Focuses on the $150-$400 price range found in P2 to show value.</div>
+      <div class="keywords"><span class="keyword">washable rugs</span><span class="keyword">pet friendly rugs</span><span class="keyword">easy clean area rugs</span></div>
+    </div>
+  </div></div>
+    </section>
+    
+    <section class="section">
+      <h2>📱 Social Media Captions</h2>
+      <div class="social-grid">
+        
+  <div class="social-post">
+    <div class="platform-badge ig">Instagram</div>
+    <p>Spilled juice? No big deal. This rug goes right in the wash and comes out looking brand new. 🧼✨</p>
+    <div class="hashtags">#WayfairFinds #RugLife #HomeHacks</div>
+  </div>
+
+  <div class="social-post">
+    <div class="platform-badge pin">Pinterest</div>
+    <p><strong>The Rug Your Dog Will Love (And You Will Too)</strong></p>
+    <p>Soft enough for naps, tough enough for the washing machine. See our top picks under $400.</p>
+  </div>
+
+  <div class="social-post">
+    <div class="platform-badge fb">Facebook</div>
+    <p>Stop worrying about the white rug. Our new washable collection handles spills, paws, and everything in between. Plus, they're all in that sweet spot price you love.</p>
+  </div>
+
+  <div class="social-post">
+    <div class="platform-badge tt">TikTok</div>
+    <p><strong>Hook:</strong> Tell me you have a dog without telling me you have a dog.</p>
+    <p>Show a muddy dog running across a nice rug. Cut to the rug being peeled up and tossed in a standard washing machine. End with a clean rug and a happy dog. 'Real rugs for real life.'</p>
+  </div>
+
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2>🎯 Campaign Concepts</h2>
+      
+  <div class="campaign-card">
+    <h4>Campaign: "The Real Life Collection"</h4>
+    <div class="tagline">"Rugs for people who actually live in their homes."</div>
+    <p>A campaign highlighting the 28% growth in washable rugs by showing real-life 'messes' being easily solved.</p>
+    <div class="campaign-details">
+    <div class="campaign-detail">
+      <h5>Content Pillars</h5>
+      <p>Durability, Machine-washable, Style for every budget.</p>
+    </div>
+  
+    <div class="campaign-detail">
+      <h5>Format</h5>
+      <p>User-generated content style videos and relatable photography.</p>
+    </div>
+  
+    <div class="campaign-detail">
+      <h5>Competitive Angle</h5>
+      <p>Focusing on 'washable style' rather than just 'functional mats' to beat Competitor Y.</p>
+    </div>
+  </div>
+  </div>
+    </section>
+    
+    <section class="section">
+      <h2>⚔️ Competitive Content Angles</h2>
+      
+  <div class="competitive-angle">
+    <h4>Angle: "Real Style vs. Plastic Mats"</h4>
+    <p><strong>Competitor Gap:</strong> Competitor Y makes rugs that feel like plastic picnic blankets.</p>
+    <p><strong>Wayfair Opportunity:</strong> We offer rugs that feel like traditional wool or cotton but have the secret power of being washable.</p>
+  </div>
+
+    </section>
+    
+    <footer class="footer">
+      <div class="logo">Wayfair | AI Insights & Content Agent</div>
+      <p>Report generated from Market Trend Discovery (P2) and Competitor Monitoring (P3) data</p>
+      <p>Category: Area Rug | Focus: Natural &amp; Sustainable | Date: September 3, 2026</p>
+    </footer>
+  </div>
+</body>
+</html>
