@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wayfair AI Agent Engineering - Project Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #7C3AED;
+      --primary-dark: #5B21B6;
+      --primary-light: #F3E8FF;
+      --text-main: #1F2937;
+      --text-muted: #6B7280;
+      --bg: #F7F8FA;
+      --card-bg: #FFFFFF;
+      --border: #E5E7EB;
+    }
+    
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+    
+    body { 
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+      background: var(--bg); 
+      color: var(--text-main); 
+      line-height: 1.6; 
+      padding: 40px 20px; 
+    }
+    
+    .container { 
+      max-width: 1100px; 
+      margin: 0 auto; 
+    }
+    
+    .header { 
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); 
+      color: white; 
+      padding: 60px 40px; 
+      border-radius: 16px; 
+      margin-bottom: 40px; 
+      box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2); 
+      text-align: center; 
+    }
+    
+    .header h1 { 
+      font-size: 2.5rem; 
+      font-weight: 700; 
+      margin-bottom: 16px; 
+      letter-spacing: -0.5px;
+    }
+    
+    .header p { 
+      font-size: 1.15rem; 
+      opacity: 0.9; 
+      max-width: 700px; 
+      margin: 0 auto; 
+    }
+    
+    .section-title { 
+      font-size: 1.5rem; 
+      font-weight: 600; 
+      margin-bottom: 24px; 
+      color: var(--text-main); 
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+      gap: 24px; 
+      margin-bottom: 40px;
+    }
+    
+    .card { 
+      background: var(--card-bg); 
+      border: 1px solid var(--border); 
+      border-radius: 12px; 
+      padding: 32px; 
+      text-decoration: none; 
+      color: inherit; 
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); 
+      display: flex; 
+      flex-direction: column; 
+      height: 100%; 
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); 
+    }
+    
+    .card:hover { 
+      transform: translateY(-6px); 
+      box-shadow: 0 12px 24px -4px rgba(124, 58, 237, 0.15); 
+      border-color: var(--primary-light); 
+    }
+    
+    .card-icon { 
+      width: 56px; 
+      height: 56px; 
+      border-radius: 12px; 
+      background: var(--primary-light); 
+      color: var(--primary); 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-size: 26px; 
+      margin-bottom: 24px; 
+    }
+    
+    .card h2 { 
+      font-size: 1.25rem; 
+      font-weight: 600; 
+      color: var(--text-main); 
+      margin-bottom: 12px; 
+    }
+    
+    .card p { 
+      font-size: 0.95rem; 
+      color: var(--text-muted); 
+      margin-bottom: 24px; 
+      flex-grow: 1; 
+    }
+    
+    .card-footer { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      border-top: 1px solid var(--border); 
+      padding-top: 16px; 
+      font-size: 0.85rem; 
+      font-weight: 600; 
+      color: var(--primary); 
+    }
+    
+    .card-footer span.date { 
+      color: var(--text-muted); 
+      font-weight: 500;
+    }
+    
+    .footer {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+    
+    @media (max-width: 768px) {
+      .header { padding: 40px 20px; }
+      .header h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Wayfair AI Agent Engineering</h1>
+      <p>Business Intelligence Portfolio &mdash; Fall 2026 Externship</p>
+    </header>
+    
+    <h2 class="section-title">📁 Project Deliverables</h2>
+    
+    <div class="grid">
+      <!-- Card 1 -->
+      <a href="outdoor_rug_competitor_report_2026-09-02.html" class="card">
+        <div class="card-icon">⚔️</div>
+        <h2>Competitor Monitoring Report</h2>
+        <p>Automated AI analysis tracking competitor product launches, pricing strategies, and market positioning across Wayfair, Amazon, and Walmart.</p>
+        <div class="card-footer">
+          <span>View Report &rarr;</span>
+          <span class="date">Sept 2, 2026</span>
+        </div>
+      </a>
+      
+      <!-- Card 2 -->
+      <a href="outdoor_rug_trend_report_2026-09-02.html" class="card">
+        <div class="card-icon">📈</div>
+        <h2>Consumer Trend Discovery</h2>
+        <p>AI-driven insights aggregating product data, blogs, and social media to uncover emerging outdoor rug design trends before they hit the mainstream.</p>
+        <div class="card-footer">
+          <span>View Report &rarr;</span>
+          <span class="date">Sept 2, 2026</span>
+        </div>
+      </a>
+      
+      <!-- Card 3 -->
+      <a href="Wayfair_Area_Rug_Content_Strategy_2026-09-03.html" class="card">
+        <div class="card-icon">✍️</div>
+        <h2>AI Insights &amp; Content Strategy</h2>
+        <p>Actionable marketing assets including SEO copy, social media captions, and lifecycle email sequences derived directly from market signals.</p>
+        <div class="card-footer">
+          <span>View Strategy &rarr;</span>
+          <span class="date">Sept 3, 2026</span>
+        </div>
+      </a>
+      
+      <!-- Card 4 -->
+      <a href="Outdoor_Rug_Dashboard_2026-09-05.html" class="card">
+        <div class="card-icon">📊</div>
+        <h2>Market Intelligence Dashboard</h2>
+        <p>The culminating interactive dashboard surfacing live trends, benchmarks, and actionable content suggestions for the Wayfair category team.</p>
+        <div class="card-footer">
+          <span>Open Dashboard &rarr;</span>
+          <span class="date">Sept 5, 2026</span>
+        </div>
+      </a>
+    </div>
+    
+    <footer class="footer">
+      <p>Developed for the Wayfair n8n AI Agent Engineering Externship &middot; Hosted by Extern</p>
+    </footer>
+  </div>
+</body>
+</html>
